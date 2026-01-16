@@ -24,7 +24,7 @@ variable "cluster_version" {
   default     = "1.30"
 }
 
-variable "node_groups" {
+variable "eks_managed_node_groups" {
   description = "EKS managed node groups configuration"
   type        = any
 }

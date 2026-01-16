@@ -42,6 +42,7 @@ module "vpc" {
   }
 }
 
+
 ############################
 # EKS Cluster
 ############################
@@ -53,12 +54,13 @@ module "eks" {
   cluster_name    = var.cluster_name
   cluster_version = var.cluster_version
 
-  vpc_id  = module.vpc.vpc_id
-  subnets = module.vpc.private_subnets
+  vpc_id     = module.vpc.vpc_id
+  subnet_ids = module.vpc.private_subnets
 
-  manage_aws_auth = true
+  enable_cluster_creator_admin_permissions = true
 
-  node_groups = var.node_groups
+  eks_managed_node_groups = var.eks_managed_node_groups
 
   tags = var.tags
 }
+
