@@ -9,4 +9,10 @@
 .DS_Store
 .idea/
 .vscode/
+
+# Variables;tokens
+.env
+
+# Python
 __pycache__/
+.venv/
